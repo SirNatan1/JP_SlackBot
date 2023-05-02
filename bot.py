@@ -32,11 +32,26 @@ if __name__ == "__main__":
            'ぐ', 'げ', 'ご', 'ざ', 'じ', 'ず', 'ぜ', 'ぞ', 'だ', 'ぢ', 'づ', 'で', 'ど', 'ば', 'び', 'ぶ',
            'べ', 'ぼ', 'ぱ', 'ぴ', 'ぷ', 'ぺ', 'ぽ']
   
-  # Choose three random Japanese letter
+  expressions = ['ohayo-gozaimasu', 'konnichiwa', 'kombanwa', 'oyasumi', 'sayonara', 'ja mata / dewa mata', 'hajimemashute', 'yoroshiku', 'arigato', 'do itashimashute', 'gomen nasaii', 'sumimasen', 
+                 'ittekimasu', 'itterasshai', 'tadaiima', 'okaeri nasai', 'irasshaimase', 'ojamashimasu', 'ojamashimasu', 'ojamashimashita', 'itadakimasu', 'gochisousamadeshita', 'omedeto', 'ganbatte', 
+                 'kiotsukete', 'chotto matte', 'genki desuka', 'daijobu desuka', 'ii desuka', 'hisashiburi', 'odaijini', 'osakini dozo', 'shitsurei shimasu', 'otsukare sama', 'moshimoshi', 'kanpai', 
+                 'wakarimasen', 'wakarimashuta', 'moichido onegaishimasu', 'yukkuri onegaishimasu']
+  
+  num = list(range(1, 1000001))
+  
+  # Choose 2 random numbers
+  chosen_num = random.sample(num, 2)
+  # Choose three random letter
   chosen_letters = random.sample(letters, 3)
+  # choose three random expressions
+  chosen_express = random.sample(expressions, 3)
 
-  msg = f"Konnichiwa mina-san kyo wa moji desu, gannbate kudasai: {chosen_letters[0]}, {chosen_letters[1]}, {chosen_letters[2]}"
-  schedule.every().day.at("11:00").do(lambda: sendMessage(slack_client, msg))
+  msg = f"Konnichiwa mina-san kyo wa moji desu, ganbatte kudasai: {chosen_letters[0]}, {chosen_letters[1]}, {chosen_letters[2]}"
+  msg2 = f"Soshite senpai, kotaete kudasai: {chosen_express[0]}, {chosen_express[1]}, {chosen_express[2]}"
+  msg3 = f"Soretomo Mina-san, kazu wa nandesuka: {chosen_num[0]}, {chosen_num[1]}"
+  schedule.every().day.at("13:00").do(lambda: sendMessage(slack_client, msg))
+  schedule.every().day.at("12:30").do(lambda: sendMessage(slack_client, msg2))
+  schedule.every().day.at("14:30").do(lambda: sendMessage(slack_client, msg3))
 
   logging.info("entering loop")
 
