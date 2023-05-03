@@ -1,5 +1,5 @@
 # Slack Japanese Letter Bot
-This Python script is a Slack bot that generates three random Japanese letters and sends them to a Slack channel every day at 11:00 AM.
+This Python script is a Slack bot that generates random Japanese letters, expressions and numbers, tags a user and sends them to a Slack channel every day at predifined time (soon random).
 The bot utilizes the schedule library to schedule the message and the slack_sdk library to send the message to the Slack channel.
 
 ## Getting Started
