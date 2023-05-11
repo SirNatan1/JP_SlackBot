@@ -45,10 +45,10 @@ chosen_kata = random.sample(kata_letters, 3)
 # choose three random expressions
 chosen_express = random.sample(expressions, 3)
 
-msg = f"Konnichiwa {chosen_user[0].strip('[]')} kyo wa moji desu, ganbatte kudasai: {chosen_letters[0]}, {chosen_letters[1]}, {chosen_letters[2]}"
+msg = f"Konnichiwa {chosen_user[0].strip('[]')} kyo wa hiragana desu, ganbatte kudasai: {chosen_letters[0]}, {chosen_letters[1]}, {chosen_letters[2]}"
 msg2 = f"Soshite {chosen_user[0].strip('[]')}, kotaete kudasai: {chosen_express[0]}, {chosen_express[1]}, {chosen_express[2]}"
 msg3 = f"Soretomo {chosen_user[0].strip('[]')}, kazu wa nandesuka: {chosen_num[0]}, {chosen_num[1]}"
-msg4 = f"{chosen_user[0].strip('[]')}, kotaete kudasai: {chosen_kata[0]}, {chosen_kata[1]}, {chosen_kata[2]}"
+msg4 = f"{chosen_user[0].strip('[]')}, katakana o kotaete kudasai: {chosen_kata[0]}, {chosen_kata[1]}, {chosen_kata[2]}"
 schedule.every().day.at("11:23").do(lambda: sendMessage(slack_client, msg))
 schedule.every().day.at("14:29").do(lambda: sendMessage(slack_client, msg2))
 schedule.every().day.at("11:30").do(lambda: sendMessage(slack_client, msg3))
